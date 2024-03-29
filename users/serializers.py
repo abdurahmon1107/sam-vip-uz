@@ -3,7 +3,7 @@ from .models import *
 
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Profile
+        model = User
         fields = "__all__"
 
 # _____________________________________________________________________________
@@ -20,28 +20,7 @@ class SubcategorySerializer(serializers.ModelSerializer):
         model = Subcategory
         fields = "__all__"
 
-# _____________________________________________________________________________
-
-# class ProductColorsSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = ProductColors
-#         fields = "__all__"
-
-# ____________________________________________________________________________
-
-# class ProductImagesSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = ProductImages
-#         fields = "__all__"
-
-# ___________________________________________________________________________
-
-# class ProductSizeSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = ProductSize
-#         fields = "__all__"
-
-# ___________________________________________________________________________
+# __________________________________________________________________________
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
@@ -62,13 +41,6 @@ class LocationSerializer(serializers.ModelSerializer):
         model = Location
         fields = "__all__"
 
-# ___________________________________________________________________________
-
-class CenterSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Center
-        fields = "__all__"
-
 # __________________________________________________________________________
 
 class ProductClearanceSerializer(serializers.ModelSerializer):
@@ -77,8 +49,6 @@ class ProductClearanceSerializer(serializers.ModelSerializer):
         fileds = "__all__"
 
 # _________________________________________________________________________
-
-
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -107,3 +77,15 @@ class SubCategorySerializer(serializers.ModelSerializer):
 
 
 
+class UserProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserProduct
+        fields = ('id', 'user', 'product')
+
+
+# ________________________________________________________________________
+        
+class CenterSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Center
+        fields = ('id', 'name')

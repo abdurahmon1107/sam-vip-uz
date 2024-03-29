@@ -22,8 +22,13 @@ class AddDelete(BaseModel):
         return self.id
 
 
-class Center(BaseModel):
-    name = models.TextField()
+
+
+class Center(models.Model):
+    name = models.CharField(max_length=1000)
+
+    class Meta:
+        ordering = ["name"]
 
     def __str__(self):
         return self.id

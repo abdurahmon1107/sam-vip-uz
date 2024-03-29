@@ -15,3 +15,10 @@ class AddDelete(serializers.ModelSerializer):
     def get_all_price(self):
         return Product.product_count * self.all_price
     
+
+
+class CenterListCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Center.objects.all()
+        fields = ('id', 'name')
+

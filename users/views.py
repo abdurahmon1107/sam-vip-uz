@@ -3,7 +3,7 @@ from rest_framework.generics import *
 from .serializers import *
 
 class ProfileUpdateAPIView(UpdateAPIView):
-    queryset = Profile.objects.all()
+    queryset = User.objects.all()
     serializer_class = ProfileSerializer
 
 # __________________________________________________________________________________
@@ -38,16 +38,6 @@ class LocationCreateAPIView(CreateAPIView):
 
 # __________________________________________________________________________________
 
-class CenterCreateAPIView(CreateAPIView):
-    queryset = Center.objects.all()
-    serializer_class = CenterSerializer
-
-class CenterRetrieveAPIVeiw(RetrieveAPIView):
-    queryset = Center.objects.all()
-    serializer_class = CenterSerializer
-
-# __________________________________________________________________________________
-
 class ProductClearanceSerializer(CreateAPIView):
     queryset = ProductClearance.objects.all()
     serializer_class = ProductClearance
@@ -59,3 +49,18 @@ class ProductAPIView(RetrieveAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     lookup_field = 'pk'
+
+
+# __________________________________________________________________________________
+    
+class UserProductRetrieveAPIView(RetrieveAPIView):
+    queryset = UserProduct.objects.all()
+    serializer_class = UserProductSerializer
+    lookup_field = 'pk'
+
+# __________________________________________________________________________________
+    
+class CenterListAPIView(ListAPIView):
+    queryset = Center.objects.all()
+    serializer_class = CenterSerializer
+
