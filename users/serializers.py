@@ -72,16 +72,6 @@ class SubCategorySerializer(serializers.ModelSerializer):
         model = Subcategory
         fields = ('id', 'title', 'category')
 
-# ________________________________________________________________________
-
-
-
-
-class UserProductSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = UserProduct
-        fields = ('id', 'user', 'product')
-
 
 # ________________________________________________________________________
         
@@ -91,9 +81,9 @@ class CenterSerializer(serializers.ModelSerializer):
         fields = ('id', 'name')
 
 # ________________________________________________________________________
-        
+
 
 class ProductListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
-        fields = ('id', 'title', 'image', 'size', 'price')
+        fields = ('id', 'title', 'image', 'color', 'size', 'description', 'product_count', 'price', 'created_at')

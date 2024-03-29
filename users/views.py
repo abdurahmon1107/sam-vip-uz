@@ -50,17 +50,23 @@ class ProductAPIView(RetrieveAPIView):
     serializer_class = ProductSerializer
     lookup_field = 'pk'
 
-
-# __________________________________________________________________________________
-    
-class UserProductRetrieveAPIView(RetrieveAPIView):
-    queryset = UserProduct.objects.all()
-    serializer_class = UserProductSerializer
-    lookup_field = 'pk'
-
 # __________________________________________________________________________________
     
 class CenterListAPIView(ListAPIView):
     queryset = Center.objects.all()
     serializer_class = CenterSerializer
 
+
+# __________________________________________________________________________________
+    
+
+class ProductListAPIView(ListAPIView):
+    serializer_class = ProductListSerializer
+
+    def get_queryset(self):
+        queryset = Product.objects.all()
+        category = self.request.query_params.get('category', None)
+        if category:
+            queryset = queryset.filter(category=category)
+
+        return queryset
