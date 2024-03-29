@@ -89,3 +89,11 @@ class CenterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Center
         fields = ('id', 'name')
+
+# ________________________________________________________________________
+        
+
+class ProductListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = ('id', 'title', 'image', 'color', 'size', 'description', 'product_count', 'price', 'created_at')
