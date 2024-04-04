@@ -1,6 +1,6 @@
 from django.db import models
 from colorfield.fields import ColorField
-
+from user.models import User
 
 class BaseModel(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
@@ -81,22 +81,22 @@ class Product(BaseModel):
         return f"{self.title} - {self.category}"
 
 
-class User(models.Model):
-    class GenderType(models.TextChoices):
-        MAN = "Erkak", "erkak"
-        WOMAN = "Ayol", "ayol"
+# class User(models.Model):
+#     class GenderType(models.TextChoices):
+#         MAN = "Erkak", "erkak"
+#         WOMAN = "Ayol", "ayol"
 
 
-    last_name = models.CharField(max_length=50)
-    first_name = models.CharField(max_length=50)
-    fathers_name = models.CharField(max_length=50)
-    email = models.EmailField(null=True, blank=True)
-    phone_number = models.CharField(max_length=13)
-    gender = models.CharField(GenderType, max_length=5)
-    born_at = models.DateField(auto_now_add=True)
+#     last_name = models.CharField(max_length=50)
+#     first_name = models.CharField(max_length=50)
+#     fathers_name = models.CharField(max_length=50)
+#     email = models.EmailField(null=True, blank=True)
+#     phone_number = models.CharField(max_length=13)
+#     gender = models.CharField(GenderType, max_length=5)
+#     born_at = models.DateField(auto_now_add=True)
 
-    def __str__(self):
-        return f"{self.first_name} - {self.phone_number} - {self.gender}"
+#     def __str__(self):
+#         return f"{self.first_name} - {self.phone_number} - {self.gender}"
 
 
 class Location(models.Model):

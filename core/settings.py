@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-99$9j^adp1320t-rih@zl8qe_-nn$5wt**g$w4jhwk&(56*ozp'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users',
+    'user',
     'admins',
     'rest_framework'
 ]
@@ -122,5 +123,5 @@ STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
-
+AUTH_USER_MODEL = "user.User"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

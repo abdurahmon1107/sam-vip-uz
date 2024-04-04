@@ -1,5 +1,6 @@
 from django.db import models
-from users.models import *
+from users.models import  Product
+from user.models import User
 
 
 class BaseModel(models.Model):
