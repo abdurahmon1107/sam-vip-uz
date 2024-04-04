@@ -35,7 +35,7 @@ class Subcategory(models.Model):
 
 class ProductColors(BaseModel):
     name = models.CharField(max_length=50)
-    color = ColorField(default="#FFFFFF")
+    color =ColorField(default="#FFFFFF")
     price = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
